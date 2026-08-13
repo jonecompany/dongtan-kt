@@ -3,130 +3,3389 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
 <title>KT딜마켓 | 휴대폰 · 인터넷·TV 온라인샵</title>
 <meta name="description" content="KT딜마켓. 휴대폰, 인터넷·TV, 결합상품을 온라인으로 간편하게 상담하세요.">
-<link rel="stylesheet" href="style.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --red:#e4002b;
+  --black:#111;
+  --gray:#f6f6f6;
+  --line:#e9e9e9;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:"Noto Sans KR",sans-serif;
+  color:#171717;
+  letter-spacing:-.4px;
+  background:#fff;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+.wrap{
+  width:min(1200px,calc(100% - 40px));
+  margin:auto;
+}
+
+/* =========================
+   TOP NOTICE
+========================= */
+
+.notice{
+  height:38px;
+  background:#111;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  font-size:12px;
+}
+
+.notice a{
+  color:#ff4967;
+  font-weight:800;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  height:78px;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.nav{
+  height:100%;
+  width:min(1200px,calc(100% - 40px));
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  column-gap:8px;
+  align-items:center;
+  line-height:1;
+}
+
+.brand i{
+  grid-row:1/3;
+  background:var(--red);
+  color:#fff;
+  font-style:normal;
+  font-weight:900;
+  padding:7px 8px;
+  border-radius:6px;
+  font-size:13px;
+}
+
+.brand b{
+  font-size:18px;
+}
+
+.brand small{
+  font-size:8px;
+  color:#999;
+  letter-spacing:1.5px;
+}
+
+.nav nav{
+  display:flex;
+  gap:32px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.nav nav a{
+  transition:.2s;
+}
+
+.nav nav a:hover{
+  color:var(--red);
+}
+
+.navcall{
+  border:1px solid #ddd;
+  border-radius:25px;
+  padding:10px 15px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.shopbadge{
+  font-size:8px;
+  letter-spacing:1.5px;
+  color:#e4002b;
+  font-weight:900;
+  margin-left:auto;
+  margin-right:18px;
+}
+
+.hamb{
+  display:none;
+  border:0;
+  background:none;
+  font-size:23px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:650px;
+  background:linear-gradient(120deg,#fafafa,#fff);
+  display:grid;
+  grid-template-columns:1fr 500px;
+  gap:60px;
+  align-items:center;
+  padding:75px max(20px,calc((100% - 1200px)/2));
+}
+
+.pill,
+.section-title small,
+.title-row small,
+.estimate small{
+  font-size:10px;
+  color:var(--red);
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.hero h1{
+  font-size:62px;
+  line-height:1.15;
+  letter-spacing:-4px;
+  margin:18px 0;
+}
+
+.hero h1 em,
+.estimate h2 em{
+  font-style:normal;
+  color:var(--red);
+}
+
+.hero-left>p{
+  font-size:18px;
+  color:#666;
+  line-height:1.8;
+}
+
+.hero-btns{
+  display:flex;
+  gap:10px;
+  margin:32px 0;
+}
+
+.redbtn,
+.whitebtn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:9px;
+  padding:14px 21px;
+  font-weight:800;
+  font-size:14px;
+  border:0;
+  cursor:pointer;
+}
+
+.redbtn{
+  background:var(--red);
+  color:#fff;
+}
+
+.whitebtn{
+  background:#fff;
+  border:1px solid #ddd;
+}
+
+.redbtn b{
+  margin-left:20px;
+}
+
+.proof{
+  display:flex;
+  gap:18px;
+  font-size:11px;
+  color:#777;
+}
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual{
+  height:455px;
+  border-radius:28px;
+  background:linear-gradient(145deg,#171717,#353535);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  padding:28px;
+}
+
+.visual-top{
+  font-size:9px;
+  letter-spacing:2px;
+  color:#ff3c5d;
+  font-weight:900;
+}
+
+.dealcopy{
+  position:absolute;
+  left:30px;
+  bottom:28px;
+  display:grid;
+  z-index:3;
+}
+
+.dealcopy small{
+  color:#aaa;
+  font-size:9px;
+  letter-spacing:2px;
+}
+
+.dealcopy strong{
+  font-size:34px;
+  line-height:1.1;
+  margin:8px 0;
+}
+
+.dealcopy span{
+  font-size:11px;
+  color:#bbb;
+}
+
+.dealcopy a{
+  margin-top:15px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.phone-stack{
+  position:absolute;
+  right:30px;
+  top:65px;
+  width:280px;
+  height:260px;
+}
+
+.phone{
+  position:absolute;
+  width:105px;
+  height:205px;
+  border:5px solid #222;
+  border-radius:23px;
+  background:linear-gradient(135deg,#ddd,#777);
+  box-shadow:0 20px 40px #0007;
+}
+
+.p1{
+  right:0;
+  top:20px;
+  transform:rotate(13deg);
+}
+
+.p2{
+  right:80px;
+  top:5px;
+  transform:rotate(-1deg);
+  background:linear-gradient(135deg,#777,#ddd);
+}
+
+.p3{
+  right:150px;
+  top:45px;
+  transform:rotate(-14deg);
+  background:linear-gradient(135deg,#aaa,#444);
+}
+
+/* =========================
+   QUICK
+========================= */
+
+.quick{
+  background:#fff;
+  padding:75px 0;
+}
+
+.section-title h2{
+  font-size:36px;
+  letter-spacing:-2px;
+  margin:5px 0 0;
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:35px;
+}
+
+.quick-grid a{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:23px;
+  position:relative;
+  transition:.2s;
+}
+
+.quick-grid a:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 30px #0000000c;
+}
+
+.qicon{
+  font-size:27px;
+  margin-bottom:22px;
+}
+
+.quick-grid b{
+  display:block;
+  font-size:17px;
+}
+
+.quick-grid span{
+  font-size:11px;
+  color:#888;
+}
+
+.quick-grid i{
+  position:absolute;
+  right:20px;
+  bottom:22px;
+  color:#bbb;
+  font-style:normal;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+  padding:100px 0;
+}
+
+.title-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+}
+
+.title-row h2{
+  font-size:40px;
+  letter-spacing:-2px;
+  margin:5px 0;
+}
+
+.title-row p{
+  color:#888;
+  font-size:13px;
+}
+
+.title-row>a{
+  font-size:12px;
+  font-weight:800;
+}
+
+/* =========================
+   PHONE CARDS
+========================= */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:35px;
+}
+
+.phonecard{
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:14px;
+  position:relative;
+  transition:.25s;
+}
+
+.phonecard:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 35px #0000000d;
+}
+
+.phonecard .badge{
+  position:absolute;
+  left:24px;
+  top:24px;
+  color:var(--red);
+  font-size:9px;
+  font-weight:900;
+  z-index:2;
+}
+
+.mock{
+  height:270px;
+  border-radius:13px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  line-height:1.05;
+  overflow:hidden;
+}
+
+.mock span{
+  font-size:15px;
+  color:#555;
+}
+
+.mock b{
+  font-size:37px;
+  margin-top:9px;
+}
+
+.samsung{
+  background:linear-gradient(145deg,#e9e9ed,#b8b8c0);
+}
+
+.fold8{
+  background:linear-gradient(145deg,#e6e1ea,#bdb5c7);
+}
+
+.flip8{
+  background:linear-gradient(145deg,#f0e3ed,#d2b9cc);
+}
+
+.iphone{
+  background:linear-gradient(145deg,#eee,#ccc);
+}
+
+.phonecard h3{
+  font-size:17px;
+  margin:17px 4px 3px;
+}
+
+.phonecard p{
+  font-size:11px;
+  color:#999;
+  margin:0 4px 14px;
+}
+
+.phonecard button,
+.phonecard a.cardbtn{
+  display:block;
+  width:100%;
+  text-align:center;
+  border:0;
+  background:#111;
+  color:#fff;
+  border-radius:7px;
+  padding:10px 13px;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* =========================
+   DARK BENEFITS
+========================= */
+
+.darksection{
+  background:#141414;
+  color:#fff;
+  padding:100px 0;
+}
+
+.light h2{
+  color:#fff;
+}
+
+.light em{
+  color:#ff3b5c;
+  font-style:normal;
+}
+
+.benefit-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:45px;
+}
+
+.benefit-grid>div{
+  background:#222;
+  border-radius:15px;
+  padding:27px;
+  min-height:175px;
+}
+
+.benefit-grid span{
+  font-size:9px;
+  color:#ff3b5c;
+  font-weight:900;
+}
+
+.benefit-grid b{
+  display:block;
+  font-size:18px;
+  margin-top:28px;
+}
+
+.benefit-grid p{
+  font-size:11px;
+  color:#999;
+}
+
+/* =========================
+   INTERNET
+========================= */
+
+.internet-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:40px;
+}
+
+.inet{
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:25px;
+  min-height:210px;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+
+.inet strong{
+  font-size:35px;
+}
+
+.inet b{
+  font-size:17px;
+  margin-top:15px;
+}
+
+.inet span{
+  font-size:11px;
+  color:#999;
+}
+
+.inet button{
+  margin-top:auto;
+  background:#111;
+  color:#fff;
+  border:0;
+  border-radius:7px;
+  padding:10px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.inet.featured{
+  border:2px solid var(--red);
+}
+
+.inet label{
+  position:absolute;
+  top:13px;
+  right:13px;
+  color:var(--red);
+  font-size:8px;
+  font-weight:900;
+}
+
+/* =========================
+   EVENTS
+========================= */
+
+.eventsec{
+  background:#f7f7f7;
+  padding:95px 0;
+}
+
+.eventgrid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:12px;
+  margin-top:38px;
+}
+
+.event{
+  min-height:235px;
+  border-radius:17px;
+  background:#fff;
+  padding:27px;
+  display:flex;
+  flex-direction:column;
+}
+
+.event.big{
+  background:#111;
+  color:#fff;
+}
+
+.event small{
+  font-size:9px;
+  color:var(--red);
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.event h3{
+  font-size:23px;
+  line-height:1.3;
+  margin:25px 0 10px;
+}
+
+.event p{
+  font-size:11px;
+  color:#888;
+}
+
+.event a{
+  font-size:11px;
+  font-weight:800;
+  margin-top:auto;
+}
+
+/* =========================
+   ESTIMATE
+========================= */
+
+.estimate{
+  background:#f1f1f1;
+  padding:95px 0;
+}
+
+.estimate-inner{
+  display:grid;
+  grid-template-columns:1fr 480px;
+  gap:90px;
+  align-items:start;
+}
+
+.estimate h2{
+  font-size:40px;
+  line-height:1.25;
+  letter-spacing:-2px;
+  margin:8px 0 18px;
+}
+
+.estimate>div>p{
+  color:#888;
+  font-size:13px;
+}
+
+.callbox{
+  margin-top:40px;
+  border-top:1px solid #ddd;
+  padding-top:20px;
+  display:flex;
+  flex-direction:column;
+}
+
+.callbox span{
+  font-size:10px;
+  color:#999;
+}
+
+.callbox a{
+  font-size:28px;
+  font-weight:900;
+}
+
+.estimate form{
+  background:#fff;
+  border-radius:17px;
+  padding:28px;
+  box-shadow:0 20px 50px #0000000a;
+}
+
+.estimate form h3{
+  margin:0 0 20px;
+  font-size:20px;
+}
+
+.estimate label{
+  display:block;
+  font-size:10px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.estimate input,
+.estimate select,
+.estimate textarea{
+  width:100%;
+  border:1px solid #ddd;
+  border-radius:7px;
+  padding:11px;
+  margin-top:5px;
+  outline:0;
+}
+
+.estimate textarea{
+  height:85px;
+  resize:vertical;
+}
+
+.twocol{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.agree{
+  display:flex!important;
+  align-items:center;
+  font-weight:500!important;
+}
+
+.agree input{
+  width:auto;
+  margin:0 6px 0 0;
+}
+
+.hint{
+  display:block;
+  color:#aaa;
+  font-size:9px;
+  margin-top:12px;
+}
+
+/* =========================
+   STORE
+========================= */
+
+.store{
+  padding:90px 0;
+}
+
+.storegrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid #ddd;
+  margin-top:35px;
+}
+
+.storegrid>div{
+  padding:24px;
+  border:1px solid #ddd;
+  border-top:0;
+  border-right:0;
+  min-height:130px;
+}
+
+.storegrid>div:last-child{
+  border-right:1px solid #ddd;
+}
+
+.storegrid small{
+  display:block;
+  color:#aaa;
+  font-size:8px;
+  letter-spacing:1px;
+  margin-bottom:18px;
+}
+
+.storegrid b,
+.storegrid a{
+  font-size:13px;
+  line-height:1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#111;
+  color:#aaa;
+  padding:45px 0 25px;
+  font-size:11px;
+}
+
+.foot{
+  display:flex;
+  justify-content:space-between;
+}
+
+.foot strong{
+  color:#fff;
+  font-size:16px;
+}
+
+.foot i{
+  font-style:normal;
+  background:var(--red);
+  color:#fff;
+  padding:3px 5px;
+  border-radius:4px;
+  margin-right:5px;
+}
+
+.copyright{
+  border-top:1px solid #292929;
+  margin-top:35px;
+  padding-top:18px;
+  color:#666;
+  font-size:9px;
+}
+
+/* =========================
+   PHONE SHOP MODAL
+========================= */
+
+.phone-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.62);
+  z-index:500;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.phone-modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(1050px,100%);
+  max-height:92vh;
+  overflow:auto;
+  background:#fff;
+  border-radius:24px;
+  position:relative;
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+.modal-close{
+  position:absolute;
+  right:22px;
+  top:18px;
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:50%;
+  background:#f2f2f2;
+  font-size:20px;
+  z-index:5;
+}
+
+.modal-head{
+  padding:35px 35px 20px;
+  border-bottom:1px solid #eee;
+}
+
+.modal-head small{
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.modal-head h2{
+  font-size:32px;
+  margin:7px 0;
+  letter-spacing:-2px;
+}
+
+.modal-head p{
+  color:#888;
+  font-size:12px;
+  margin:0;
+}
+
+.modal-content{
+  display:grid;
+  grid-template-columns:350px 1fr;
+  gap:35px;
+  padding:30px 35px 35px;
+}
+
+.modal-product{
+  background:#f4f4f4;
+  border-radius:20px;
+  min-height:430px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal-phone{
+  width:180px;
+  height:340px;
+  border-radius:35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.modal-phone span{
+  font-size:13px;
+  color:#555;
+}
+
+.modal-phone strong{
+  font-size:28px;
+  margin-top:8px;
+}
+
+.estimate-options{
+  display:flex;
+  flex-direction:column;
+}
+
+.option-title{
+  font-size:11px;
+  font-weight:900;
+  margin:0 0 10px;
+}
+
+.option-group{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:23px;
+}
+
+.option-btn{
+  border:1px solid #ddd;
+  background:#fff;
+  padding:11px 15px;
+  border-radius:9px;
+  font-size:11px;
+  font-weight:800;
+  transition:.15s;
+}
+
+.option-btn:hover{
+  border-color:#111;
+}
+
+.option-btn.active{
+  background:#111;
+  border-color:#111;
+  color:#fff;
+}
+
+.price-result{
+  margin-top:5px;
+  background:#111;
+  color:#fff;
+  border-radius:15px;
+  padding:20px;
+}
+
+.price-result small{
+  display:block;
+  color:#aaa;
+  font-size:9px;
+}
+
+.price-result strong{
+  display:block;
+  font-size:27px;
+  margin:5px 0;
+}
+
+.price-result p{
+  color:#999;
+  font-size:9px;
+  margin:5px 0 0;
+}
+
+.consult-btn{
+  width:100%;
+  border:0;
+  background:var(--red);
+  color:#fff;
+  border-radius:10px;
+  padding:15px;
+  font-size:13px;
+  font-weight:900;
+  margin-top:10px;
+}
+
+/* =========================
+   BRAND SELECT
+========================= */
+
+.brand-select{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:25px;
+}
+
+.brand-select button{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:14px;
+  padding:20px;
+  text-align:left;
+  transition:.2s;
+}
+
+.brand-select button:hover{
+  border-color:#111;
+  transform:translateY(-2px);
+}
+
+.brand-select button.active{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+.brand-select strong{
+  display:block;
+  font-size:18px;
+}
+
+.brand-select span{
+  font-size:10px;
+  opacity:.6;
+}
+
+/* =========================
+   MODEL SELECT
+========================= */
+
+.model-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:25px;
+}
+
+.model-btn{
+  border:1px solid #ddd;
+  background:#fff;
+  border-radius:12px;
+  padding:15px;
+  text-align:left;
+  transition:.2s;
+}
+
+.model-btn:hover{
+  border-color:#111;
+}
+
+.model-btn.active{
+  border:2px solid var(--red);
+}
+
+.model-btn small{
+  color:var(--red);
+  font-size:8px;
+  font-weight:900;
+}
+
+.model-btn strong{
+  display:block;
+  font-size:13px;
+  margin-top:6px;
+}
+
+.model-btn span{
+  display:block;
+  color:#999;
+  font-size:9px;
+  margin-top:3px;
+}
+
+/* =========================
+   CONSULT SELECTED
+========================= */
+
+.selected-condition{
+  background:#f7f7f7;
+  border-radius:10px;
+  padding:12px;
+  margin-top:10px;
+  font-size:10px;
+  line-height:1.8;
+  color:#666;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .nav nav{
+    display:none;
+  }
+
+  .navcall{
+    display:none;
+  }
+
+  .hamb{
+    display:block;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:55px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero-visual{
+    height:370px;
+  }
+
+  .cards,
+  .quick-grid,
+  .benefit-grid,
+  .internet-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .eventgrid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .event.big{
+    grid-column:1/-1;
+  }
+
+  .estimate-inner{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .storegrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .modal-content{
+    grid-template-columns:280px 1fr;
+  }
+
+  .modal-product{
+    min-height:380px;
+  }
+
+  .modal-phone{
+    width:145px;
+    height:290px;
+  }
+}
+
+@media(max-width:560px){
+
+  .wrap{
+    width:calc(100% - 30px);
+  }
+
+  .notice{
+    font-size:10px;
+  }
+
+  .hero{
+    padding:50px 15px;
+    display:block;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero-left>p{
+    font-size:15px;
+  }
+
+  .hero-visual{
+    margin-top:35px;
+    height:350px;
+  }
+
+  .proof{
+    flex-direction:column;
+    gap:5px;
+  }
+
+  .section,
+  .quick,
+  .darksection,
+  .eventsec,
+  .estimate,
+  .store{
+    padding:65px 0;
+  }
+
+  .section-title h2,
+  .title-row h2{
+    font-size:30px;
+  }
+
+  .title-row{
+    display:block;
+  }
+
+  .title-row>a{
+    display:inline-block;
+    margin-top:12px;
+  }
+
+  .quick-grid,
+  .cards,
+  .benefit-grid,
+  .internet-grid,
+  .storegrid{
+    grid-template-columns:1fr;
+  }
+
+  .cards{
+    gap:10px;
+  }
+
+  .mock{
+    height:230px;
+  }
+
+  .eventgrid{
+    grid-template-columns:1fr;
+  }
+
+  .event.big{
+    grid-column:auto;
+  }
+
+  .estimate h2{
+    font-size:31px;
+  }
+
+  .twocol{
+    grid-template-columns:1fr;
+  }
+
+  .foot{
+    display:block;
+  }
+
+  .foot>div+div{
+    margin-top:20px;
+  }
+
+  .brand b{
+    font-size:15px;
+  }
+
+  .shopbadge{
+    display:none;
+  }
+
+  .modal-box{
+    border-radius:18px;
+    max-height:94vh;
+  }
+
+  .modal-head{
+    padding:25px 20px 15px;
+  }
+
+  .modal-head h2{
+    font-size:25px;
+  }
+
+  .modal-content{
+    display:block;
+    padding:20px;
+  }
+
+  .modal-product{
+    min-height:260px;
+    margin-bottom:25px;
+  }
+
+  .modal-phone{
+    width:110px;
+    height:210px;
+    border-radius:25px;
+  }
+
+  .modal-phone strong{
+    font-size:21px;
+  }
+
+  .model-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .brand-select{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .brand-select button{
+    padding:15px;
+  }
+}
+</style>
 </head>
+
 <body>
-<div class="notice"><span>🔥</span> KT딜마켓 온라인 특별혜택 진행중 <a href="#events">혜택 확인하기 →</a></div>
+
+<!-- =========================
+     TOP NOTICE
+========================= -->
+
+<div class="notice">
+  <span>🔥</span>
+  KT딜마켓 온라인 특별혜택 진행중
+  <a href="#events">혜택 확인하기 →</a>
+</div>
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
+
   <div class="nav">
-    <a class="brand" href="#"><i>KT</i><b>KT딜마켓</b><small>J1 COMPANY ONLINE</small></a>
+
+    <a class="brand" href="#">
+
+      <i>KT</i>
+
+      <b>KT딜마켓</b>
+
+      <small>J1 COMPANY ONLINE</small>
+
+    </a>
+
     <nav>
-      <a href="#phones">휴대폰</a><a href="#internet">인터넷·TV</a><a href="#benefits">혜택</a>
-      <a href="#events">이벤트</a><a href="#store">매장찾기</a>
+
+      <a href="#phones">휴대폰</a>
+
+      <a href="#internet">인터넷·TV</a>
+
+      <a href="#benefits">혜택</a>
+
+      <a href="#events">이벤트</a>
+
+      <a href="#store">매장찾기</a>
+
     </nav>
-    <div class="shopbadge">ONLINE SHOP</div><a class="navcall" href="tel:0313786162">📞 상담 031-378-6162</a>
-    <button class="hamb" onclick="document.body.classList.toggle('menu')">☰</button>
+
+    <div class="shopbadge">
+      ONLINE SHOP
+    </div>
+
+    <a class="navcall" href="tel:0313786162">
+      📞 상담 031-378-6162
+    </a>
+
+    <button
+      class="hamb"
+      onclick="document.body.classList.toggle('menu')">
+      ☰
+    </button>
+
   </div>
+
 </header>
 
+
 <main>
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
+
   <div class="hero-left">
-    <div class="pill">KT DEAL MARKET · J1 COMPANY</div>
-    <h1>통신비는 줄이고<br><em>혜택은 더 크게.</em></h1>
-    <p>휴대폰부터 인터넷·TV까지<br>내 조건에 맞는 KT 상품을 한 번에 비교하세요.</p>
-    <div class="hero-btns"><a class="redbtn" href="#estimate">맞춤 견적 받기 <b>→</b></a><a class="whitebtn" href="tel:0313786162">전화 상담</a></div>
-    <div class="proof"><span>✓ KT 공식 대리점</span><span>✓ 동탄역 매장</span><span>✓ 1:1 맞춤 상담</span></div>
+
+    <div class="pill">
+      KT DEAL MARKET · J1 COMPANY
+    </div>
+
+    <h1>
+      통신비는 줄이고<br>
+      <em>혜택은 더 크게.</em>
+    </h1>
+
+    <p>
+      휴대폰부터 인터넷·TV까지<br>
+      내 조건에 맞는 KT 상품을 한 번에 비교하세요.
+    </p>
+
+    <div class="hero-btns">
+
+      <a class="redbtn" href="#estimate">
+        맞춤 견적 받기
+        <b>→</b>
+      </a>
+
+      <a class="whitebtn" href="tel:0313786162">
+        전화 상담
+      </a>
+
+    </div>
+
+    <div class="proof">
+      <span>✓ KT 공식 대리점</span>
+      <span>✓ 동탄역 매장</span>
+      <span>✓ 1:1 맞춤 상담</span>
+    </div>
+
   </div>
+
+
   <div class="hero-visual">
-    <div class="visual-top">TODAY'S DEAL</div>
-    <div class="phone-stack"><div class="phone p1"></div><div class="phone p2"></div><div class="phone p3"></div></div>
-    <div class="dealcopy"><small>NEW GALAXY</small><strong>신제품<br>사전예약</strong><span>용량 업그레이드 · 매장 특별혜택</span><a href="#estimate">상담하기 →</a></div>
+
+    <div class="visual-top">
+      TODAY'S DEAL
+    </div>
+
+    <div class="phone-stack">
+
+      <div class="phone p1"></div>
+      <div class="phone p2"></div>
+      <div class="phone p3"></div>
+
+    </div>
+
+    <div class="dealcopy">
+
+      <small>NEW GALAXY</small>
+
+      <strong>
+        신제품<br>
+        사전예약
+      </strong>
+
+      <span>
+        용량 업그레이드 · 매장 특별혜택
+      </span>
+
+      <a href="#phones">
+        상담하기 →
+      </a>
+
+    </div>
+
   </div>
+
 </section>
+
+
+<!-- =========================
+     QUICK
+========================= -->
 
 <section class="quick">
+
   <div class="wrap">
-    <div class="section-title"><small>ONE STOP</small><h2>무엇을 찾으세요?</h2></div>
-    <div class="quick-grid">
-      <a href="#phones"><div class="qicon">📱</div><b>휴대폰</b><span>갤럭시 · 아이폰 · 폴더블</span><i>→</i></a>
-      <a href="#internet"><div class="qicon">🌐</div><b>인터넷·TV</b><span>인터넷 · 지니TV · 결합</span><i>→</i></a>
-      <a href="#benefits"><div class="qicon">🎁</div><b>매장혜택</b><span>사은품 · 필름 · 액세서리</span><i>→</i></a>
-      <a href="#estimate"><div class="qicon">💬</div><b>맞춤견적</b><span>내 조건으로 상담받기</span><i>→</i></a>
+
+    <div class="section-title">
+
+      <small>ONE STOP</small>
+
+      <h2>
+        무엇을 찾으세요?
+      </h2>
+
     </div>
+
+
+    <div class="quick-grid">
+
+      <a href="#phones">
+
+        <div class="qicon">📱</div>
+
+        <b>휴대폰</b>
+
+        <span>
+          갤럭시 · 아이폰 · 폴더블
+        </span>
+
+        <i>→</i>
+
+      </a>
+
+
+      <a href="#internet">
+
+        <div class="qicon">🌐</div>
+
+        <b>인터넷·TV</b>
+
+        <span>
+          인터넷 · 지니TV · 결합
+        </span>
+
+        <i>→</i>
+
+      </a>
+
+
+      <a href="#benefits">
+
+        <div class="qicon">🎁</div>
+
+        <b>매장혜택</b>
+
+        <span>
+          사은품 · 필름 · 액세서리
+        </span>
+
+        <i>→</i>
+
+      </a>
+
+
+      <a href="#estimate">
+
+        <div class="qicon">💬</div>
+
+        <b>맞춤견적</b>
+
+        <span>
+          내 조건으로 상담받기
+        </span>
+
+        <i>→</i>
+
+      </a>
+
+    </div>
+
   </div>
+
 </section>
+
+
+<!-- =========================
+     PHONES
+========================= -->
 
 <section id="phones" class="section wrap">
-  <div class="title-row"><div><small>POPULAR DEVICES</small><h2>인기 휴대폰</h2><p>원하는 모델을 선택하면 상담 조건을 바로 입력할 수 있습니다.</p></div><a href="#estimate">전체 상담 →</a></div>
-  <div class="cards">
-    <article class="phonecard hot"><div class="badge">BEST</div><div class="mock samsung s26"><span>Galaxy</span><b>S26<br>Ultra</b></div><h3>갤럭시 S26 Ultra</h3><p>기기변경 · 번호이동</p><button onclick="pick('갤럭시 S26 Ultra')">조건 알아보기 →</button></article>
-    <article class="phonecard"><div class="badge">NEW</div><div class="mock fold8"><span>Galaxy</span><b>Z Fold8</b></div><h3>갤럭시 Z Fold8</h3><p>사전예약 · 더블 스토리지</p><button onclick="pick('갤럭시 Z Fold8')">조건 알아보기 →</button></article>
-    <article class="phonecard"><div class="badge">HOT</div><div class="mock flip8"><span>Galaxy</span><b>Z Flip8</b></div><h3>갤럭시 Z Flip8</h3><p>사전예약 · 매장 특별혜택</p><button onclick="pick('갤럭시 Z Flip8')">조건 알아보기 →</button></article>
-    <article class="phonecard"><div class="badge">APPLE</div><div class="mock iphone"><span>iPhone</span><b>17</b></div><h3>아이폰 17 시리즈</h3><p>기기변경 · 번호이동</p><button onclick="pick('아이폰 17 시리즈')">조건 알아보기 →</button></article>
+
+  <div class="title-row">
+
+    <div>
+
+      <small>POPULAR DEVICES</small>
+
+      <h2>
+        인기 휴대폰
+      </h2>
+
+      <p>
+        원하는 모델을 선택하면 상세 조건과 견적을 확인할 수 있습니다.
+      </p>
+
+    </div>
+
+    <a href="#phoneShop">
+      전체 휴대폰 →
+    </a>
+
   </div>
+
+
+  <div class="cards">
+
+    <article class="phonecard hot">
+
+      <div class="badge">
+        BEST
+      </div>
+
+      <div class="mock samsung">
+
+        <span>Galaxy</span>
+
+        <b>
+          S26<br>
+          Ultra
+        </b>
+
+      </div>
+
+      <h3>
+        갤럭시 S26 Ultra
+      </h3>
+
+      <p>
+        기기변경 · 번호이동
+      </p>
+
+      <button onclick="openPhoneShop('s26-ultra')">
+        조건 알아보기 →
+      </button>
+
+    </article>
+
+
+    <article class="phonecard">
+
+      <div class="badge">
+        NEW
+      </div>
+
+      <div class="mock fold8">
+
+        <span>Galaxy</span>
+
+        <b>
+          Z Fold8
+        </b>
+
+      </div>
+
+      <h3>
+        갤럭시 Z Fold8
+      </h3>
+
+      <p>
+        사전예약 · 더블 스토리지
+      </p>
+
+      <button onclick="openPhoneShop('fold8')">
+        조건 알아보기 →
+      </button>
+
+    </article>
+
+
+    <article class="phonecard">
+
+      <div class="badge">
+        HOT
+      </div>
+
+      <div class="mock flip8">
+
+        <span>Galaxy</span>
+
+        <b>
+          Z Flip8
+        </b>
+
+      </div>
+
+      <h3>
+        갤럭시 Z Flip8
+      </h3>
+
+      <p>
+        사전예약 · 매장 특별혜택
+      </p>
+
+      <button onclick="openPhoneShop('flip8')">
+        조건 알아보기 →
+      </button>
+
+    </article>
+
+
+    <article class="phonecard">
+
+      <div class="badge">
+        APPLE
+      </div>
+
+      <div class="mock iphone">
+
+        <span>iPhone</span>
+
+        <b>
+          17
+        </b>
+
+      </div>
+
+      <h3>
+        아이폰 17 시리즈
+      </h3>
+
+      <p>
+        기기변경 · 번호이동
+      </p>
+
+      <button onclick="openPhoneShop('iphone-17')">
+        모델 선택하기 →
+      </button>
+
+    </article>
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     BENEFITS
+========================= -->
 
 <section id="benefits" class="darksection">
- <div class="wrap">
-  <div class="section-title light"><small>STORE BENEFITS</small><h2>온라인에서<br><em>더 편하게 비교하세요.</em></h2></div>
-  <div class="benefit-grid">
-   <div><span>01</span><b>필름 무료 교체</b><p>매장 구매 고객 대상 편리한 사후 케어.</p></div>
-   <div><span>02</span><b>액세서리 혜택</b><p>케이스·필름 등 필요한 액세서리 상담.</p></div>
-   <div><span>03</span><b>결합 할인 비교</b><p>휴대폰과 인터넷·TV를 함께 비교.</p></div>
-   <div><span>04</span><b>1:1 맞춤 견적</b><p>사용 패턴에 맞춰 조건을 안내.</p></div>
+
+  <div class="wrap">
+
+    <div class="section-title light">
+
+      <small>
+        STORE BENEFITS
+      </small>
+
+      <h2>
+        온라인에서<br>
+        <em>더 편하게 비교하세요.</em>
+      </h2>
+
+    </div>
+
+
+    <div class="benefit-grid">
+
+      <div>
+
+        <span>01</span>
+
+        <b>
+          필름 무료 교체
+        </b>
+
+        <p>
+          매장 구매 고객 대상 편리한 사후 케어.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <span>02</span>
+
+        <b>
+          액세서리 혜택
+        </b>
+
+        <p>
+          케이스·필름 등 필요한 액세서리 상담.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <span>03</span>
+
+        <b>
+          결합 할인 비교
+        </b>
+
+        <p>
+          휴대폰과 인터넷·TV를 함께 비교.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <span>04</span>
+
+        <b>
+          1:1 맞춤 견적
+        </b>
+
+        <p>
+          사용 패턴에 맞춰 조건을 안내.
+        </p>
+
+      </div>
+
+    </div>
+
   </div>
- </div>
+
 </section>
+
+
+<!-- =========================
+     INTERNET
+========================= -->
 
 <section id="internet" class="section wrap">
- <div class="title-row"><div><small>KT INTERNET · TV</small><h2>인터넷·TV도<br>한 번에 비교</h2><p>휴대폰 결합 할인과 가입 혜택까지 함께 상담해드립니다.</p></div><a href="#estimate">인터넷 상담 →</a></div>
- <div class="internet-grid">
-  <div class="inet"><strong>100M</strong><b>인터넷 슬림</b><span>기본 인터넷 사용</span><button onclick="pick('인터넷 100M')">상담하기</button></div>
-  <div class="inet featured"><label>POPULAR</label><strong>500M</strong><b>인터넷 베이직</b><span>가정용 추천</span><button onclick="pick('인터넷 500M')">상담하기</button></div>
-  <div class="inet"><strong>1G</strong><b>인터넷 에센스</b><span>대용량·고속 사용</span><button onclick="pick('인터넷 1G')">상담하기</button></div>
-  <div class="inet tv"><strong>TV</strong><b>지니 TV</b><span>인터넷과 결합 상담</span><button onclick="pick('인터넷 + TV')">상담하기</button></div>
- </div>
+
+  <div class="title-row">
+
+    <div>
+
+      <small>
+        KT INTERNET · TV
+      </small>
+
+      <h2>
+        인터넷·TV도<br>
+        한 번에 비교
+      </h2>
+
+      <p>
+        휴대폰 결합 할인과 가입 혜택까지 함께 상담해드립니다.
+      </p>
+
+    </div>
+
+    <a href="#estimate">
+      인터넷 상담 →
+    </a>
+
+  </div>
+
+
+  <div class="internet-grid">
+
+    <div class="inet">
+
+      <strong>100M</strong>
+
+      <b>
+        인터넷 슬림
+      </b>
+
+      <span>
+        기본 인터넷 사용
+      </span>
+
+      <button onclick="pickInternet('인터넷 100M')">
+        상담하기
+      </button>
+
+    </div>
+
+
+    <div class="inet featured">
+
+      <label>
+        POPULAR
+      </label>
+
+      <strong>500M</strong>
+
+      <b>
+        인터넷 베이직
+      </b>
+
+      <span>
+        가정용 추천
+      </span>
+
+      <button onclick="pickInternet('인터넷 500M')">
+        상담하기
+      </button>
+
+    </div>
+
+
+    <div class="inet">
+
+      <strong>1G</strong>
+
+      <b>
+        인터넷 에센스
+      </b>
+
+      <span>
+        대용량·고속 사용
+      </span>
+
+      <button onclick="pickInternet('인터넷 1G')">
+        상담하기
+      </button>
+
+    </div>
+
+
+    <div class="inet tv">
+
+      <strong>TV</strong>
+
+      <b>
+        지니 TV
+      </b>
+
+      <span>
+        인터넷과 결합 상담
+      </span>
+
+      <button onclick="pickInternet('인터넷 + TV')">
+        상담하기
+      </button>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     EVENTS
+========================= -->
 
 <section id="events" class="eventsec">
- <div class="wrap">
-  <div class="section-title"><small>EVENT</small><h2>지금 진행 중인 혜택</h2></div>
-  <div class="eventgrid">
-   <article class="event big"><small>EVENT 01 · NEW</small><h3>갤럭시 신제품<br>사전예약</h3><p>더블 스토리지 · 사은품 · 매장 특별혜택</p><a href="#estimate">사전예약 상담 →</a></article>
-   <article class="event"><small>EVENT 02</small><h3>가족·지인<br>동시 상담</h3><p>2인 이상 상담 시 추가 혜택 안내</p><a href="#estimate">혜택 문의 →</a></article>
-   <article class="event"><small>EVENT 03</small><h3>KT 기존 고객<br>감사혜택</h3><p>내가 받을 수 있는 혜택 확인</p><a href="#estimate">확인하기 →</a></article>
+
+  <div class="wrap">
+
+    <div class="section-title">
+
+      <small>
+        EVENT
+      </small>
+
+      <h2>
+        지금 진행 중인 혜택
+      </h2>
+
+    </div>
+
+
+    <div class="eventgrid">
+
+      <article class="event big">
+
+        <small>
+          EVENT 01 · NEW
+        </small>
+
+        <h3>
+          갤럭시 신제품<br>
+          사전예약
+        </h3>
+
+        <p>
+          더블 스토리지 · 사은품 · 매장 특별혜택
+        </p>
+
+        <a href="#phones">
+          사전예약 상담 →
+        </a>
+
+      </article>
+
+
+      <article class="event">
+
+        <small>
+          EVENT 02
+        </small>
+
+        <h3>
+          가족·지인<br>
+          동시 상담
+        </h3>
+
+        <p>
+          2인 이상 상담 시 추가 혜택 안내
+        </p>
+
+        <a href="#estimate">
+          혜택 문의 →
+        </a>
+
+      </article>
+
+
+      <article class="event">
+
+        <small>
+          EVENT 03
+        </small>
+
+        <h3>
+          KT 기존 고객<br>
+          감사혜택
+        </h3>
+
+        <p>
+          내가 받을 수 있는 혜택 확인
+        </p>
+
+        <a href="#estimate">
+          확인하기 →
+        </a>
+
+      </article>
+
+    </div>
+
   </div>
- </div>
+
 </section>
+
+
+<!-- =========================
+     ESTIMATE
+========================= -->
 
 <section id="estimate" class="estimate">
- <div class="wrap estimate-inner">
-  <div><small>QUICK CONSULTATION</small><h2>내 조건만 알려주시면<br><em>맞춤으로 찾아드릴게요.</em></h2><p>상담 내용을 남겨주시면 매장에서 확인 후 연락드립니다.</p><div class="callbox"><span>전화 상담</span><a href="tel:0313786162">031-378-6162</a></div></div>
-  <form id="form">
-   <h3>무료 상담 신청</h3>
-   <label>관심 상품<select id="product"><option>휴대폰</option><option>갤럭시 S26 Ultra</option><option>갤럭시 Z Fold8</option><option>갤럭시 Z Flip8</option><option>아이폰 17 시리즈</option><option>인터넷·TV</option><option>인터넷 500M</option></select></label>
-   <div class="twocol"><label>이름<input id="name" required placeholder="홍길동"></label><label>연락처<input id="phone" required placeholder="010-0000-0000"></label></div>
-   <label>상담 내용<textarea id="msg" placeholder="번호이동/기기변경, 원하는 기종, 현재 통신사 등을 적어주세요."></textarea></label>
-   <label class="agree"><input type="checkbox" required> 개인정보 수집·이용에 동의합니다.</label>
-   <button class="redbtn" type="submit">상담 신청하기 →</button>
-   <small class="hint">※ 현재는 데모 신청폼입니다. 실제 운영 시 문자·카카오톡·네이버폼·DB API로 연결할 수 있습니다.</small>
-  </form>
- </div>
+
+  <div class="wrap estimate-inner">
+
+    <div>
+
+      <small>
+        QUICK CONSULTATION
+      </small>
+
+      <h2>
+        내 조건만 알려주시면<br>
+        <em>맞춤으로 찾아드릴게요.</em>
+      </h2>
+
+      <p>
+        상담 내용을 남겨주시면 매장에서 확인 후 연락드립니다.
+      </p>
+
+      <div class="callbox">
+
+        <span>
+          전화 상담
+        </span>
+
+        <a href="tel:0313786162">
+          031-378-6162
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <form id="form">
+
+      <h3>
+        무료 상담 신청
+      </h3>
+
+
+      <label>
+        관심 상품
+
+        <select id="product">
+
+          <option value="휴대폰">
+            휴대폰
+          </option>
+
+          <option value="갤럭시 S26 Ultra">
+            갤럭시 S26 Ultra
+          </option>
+
+          <option value="갤럭시 Z Fold8">
+            갤럭시 Z Fold8
+          </option>
+
+          <option value="갤럭시 Z Flip8">
+            갤럭시 Z Flip8
+          </option>
+
+          <option value="아이폰 17 시리즈">
+            아이폰 17 시리즈
+          </option>
+
+          <option value="인터넷·TV">
+            인터넷·TV
+          </option>
+
+          <option value="인터넷 500M">
+            인터넷 500M
+          </option>
+
+        </select>
+
+      </label>
+
+
+      <div class="twocol">
+
+        <label>
+          이름
+
+          <input
+            id="name"
+            required
+            placeholder="홍길동">
+        </label>
+
+
+        <label>
+          연락처
+
+          <input
+            id="phone"
+            required
+            placeholder="010-0000-0000">
+        </label>
+
+      </div>
+
+
+      <label>
+
+        상담 내용
+
+        <textarea
+          id="msg"
+          placeholder="번호이동/기기변경, 원하는 기종, 현재 통신사 등을 적어주세요."></textarea>
+
+      </label>
+
+
+      <label class="agree">
+
+        <input
+          type="checkbox"
+          required>
+
+        개인정보 수집·이용에 동의합니다.
+
+      </label>
+
+
+      <button
+        class="redbtn"
+        type="submit">
+
+        상담 신청하기 →
+
+      </button>
+
+
+      <small class="hint">
+        ※ 상담 신청 후 매장에서 확인하여 연락드립니다.
+      </small>
+
+    </form>
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     STORE
+========================= -->
 
 <section id="store" class="store wrap">
- <div class="section-title"><small>STORE</small><h2>KT딜마켓</h2><p>제이원컴퍼니 온라인 통신상품 상담샵</p></div>
- <div class="storegrid">
-  <div><small>ADDRESS</small><b>경기도 화성시 동탄역로 150<br>1층 KT 매장</b></div>
-  <div><small>PHONE</small><a href="tel:0313786162">031-378-6162</a></div>
-  <div><small>SERVICE</small><b>휴대폰 · 인터넷 · TV<br>요금제 · 결합 · 사전예약</b></div>
-  <div><small>CONSULT</small><a href="#estimate">온라인 상담 신청 →</a></div>
- </div>
+
+  <div class="section-title">
+
+    <small>
+      STORE
+    </small>
+
+    <h2>
+      KT딜마켓
+    </h2>
+
+    <p>
+      제이원컴퍼니 온라인 통신상품 상담샵
+    </p>
+
+  </div>
+
+
+  <div class="storegrid">
+
+    <div>
+
+      <small>
+        ADDRESS
+      </small>
+
+      <b>
+        경기도 화성시 동탄역로 150<br>
+        1층 KT 매장
+      </b>
+
+    </div>
+
+
+    <div>
+
+      <small>
+        PHONE
+      </small>
+
+      <a href="tel:0313786162">
+        031-378-6162
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <small>
+        SERVICE
+      </small>
+
+      <b>
+        휴대폰 · 인터넷 · TV<br>
+        요금제 · 결합 · 사전예약
+      </b>
+
+    </div>
+
+
+    <div>
+
+      <small>
+        CONSULT
+      </small>
+
+      <a href="#estimate">
+        온라인 상담 신청 →
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
+
 </main>
 
-<footer><div class="wrap foot"><div><strong><i>KT</i> KT딜마켓</strong><p>제이원컴퍼니 온라인 통신상품 상담샵</p></div><div>경기도 화성시 동탄역로 150, 1층 KT<br>031-378-6162</div></div><div class="wrap copyright">상품별 요금·지원금·사은품은 가입 조건과 시점에 따라 달라질 수 있습니다.</div></footer>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="wrap foot">
+
+    <div>
+
+      <strong>
+        <i>KT</i>
+        KT딜마켓
+      </strong>
+
+      <p>
+        제이원컴퍼니 온라인 통신상품 상담샵
+      </p>
+
+    </div>
+
+
+    <div>
+
+      경기도 화성시 동탄역로 150, 1층 KT<br>
+      031-378-6162
+
+    </div>
+
+  </div>
+
+
+  <div class="wrap copyright">
+
+    상품별 요금·지원금·사은품은 가입 조건과 시점에 따라 달라질 수 있습니다.
+
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     PHONE SHOP MODAL
+===================================================== -->
+
+<div
+  id="phoneModal"
+  class="phone-modal">
+
+  <div class="modal-box">
+
+    <button
+      class="modal-close"
+      onclick="closePhoneShop()">
+      ×
+    </button>
+
+
+    <div class="modal-head">
+
+      <small>
+        PHONE SHOP
+      </small>
+
+      <h2>
+        휴대폰 상세 견적
+      </h2>
+
+      <p>
+        원하는 조건을 선택하면 상담 내용을 자동으로 만들어드립니다.
+      </p>
+
+    </div>
+
+
+    <div class="modal-content">
+
+
+      <!-- PRODUCT IMAGE -->
+
+      <div class="modal-product">
+
+        <div
+          id="modalPhone"
+          class="modal-phone samsung">
+
+          <span>
+            Galaxy
+          </span>
+
+          <strong>
+            S26 Ultra
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <!-- OPTIONS -->
+
+      <div class="estimate-options">
+
+
+        <!-- BRAND -->
+
+        <div class="option-title">
+          제조사
+        </div>
+
+        <div class="brand-select">
+
+          <button
+            id="brandSamsung"
+            class="active"
+            onclick="selectBrand('samsung')">
+
+            <strong>
+              삼성
+            </strong>
+
+            <span>
+              Galaxy
+            </span>
+
+          </button>
+
+
+          <button
+            id="brandApple"
+            onclick="selectBrand('apple')">
+
+            <strong>
+              아이폰
+            </strong>
+
+            <span>
+              Apple
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <!-- MODEL -->
+
+        <div class="option-title">
+          모델 선택
+        </div>
+
+        <div
+          id="modelGrid"
+          class="model-grid">
+        </div>
+
+
+        <!-- TYPE -->
+
+        <div class="option-title">
+          가입 유형
+        </div>
+
+        <div
+          id="typeOptions"
+          class="option-group">
+
+          <button
+            class="option-btn active"
+            data-type="기기변경"
+            onclick="selectType('기기변경')">
+
+            기기변경
+
+          </button>
+
+          <button
+            class="option-btn"
+            data-type="번호이동"
+            onclick="selectType('번호이동')">
+
+            번호이동
+
+          </button>
+
+        </div>
+
+
+        <!-- STORAGE -->
+
+        <div class="option-title">
+          저장용량
+        </div>
+
+        <div
+          id="storageOptions"
+          class="option-group">
+        </div>
+
+
+        <!-- COLOR -->
+
+        <div class="option-title">
+          색상
+        </div>
+
+        <div
+          id="colorOptions"
+          class="option-group">
+        </div>
+
+
+        <!-- PLAN -->
+
+        <div class="option-title">
+          KT 요금제
+        </div>
+
+        <div
+          id="planOptions"
+          class="option-group">
+        </div>
+
+
+        <!-- PRICE -->
+
+        <div class="price-result">
+
+          <small>
+            예상 월 납부금액
+          </small>
+
+          <strong id="monthlyPrice">
+            상담 후 안내
+          </strong>
+
+          <p>
+            현재 사이트에서는 실제 지원금/판매조건을 임의로 표시하지 않습니다.
+            정확한 금액은 상담을 통해 안내드립니다.
+          </p>
+
+        </div>
+
+
+        <!-- CONDITION -->
+
+        <div
+          id="selectedCondition"
+          class="selected-condition">
+
+          선택 조건을 확인해주세요.
+
+        </div>
+
+
+        <button
+          class="consult-btn"
+          onclick="submitPhoneConsult()">
+
+          이 조건으로 상담 신청 →
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
 
 <script>
-function pick(v){document.getElementById('product').value=v;document.getElementById('estimate').scrollIntoView({behavior:'smooth'});}
-document.getElementById('form').addEventListener('submit',function(e){
- e.preventDefault();
- alert('상담 신청 데모가 접수되었습니다.\\n실제 운영 시 매장 문자/카카오톡/DB 연동을 연결할 수 있습니다.');
-});
+
+/* =====================================================
+   PRODUCT DATA
+===================================================== */
+
+const PRODUCTS = [
+
+  {
+    id:"s26-ultra",
+    brand:"samsung",
+    brandName:"삼성",
+    name:"갤럭시 S26 Ultra",
+    shortName:"S26 Ultra",
+    badge:"BEST",
+    imageClass:"samsung",
+    description:"기기변경 · 번호이동",
+    storage:["256GB","512GB","1TB"],
+    colors:["블랙","화이트","실버","블루"]
+  },
+
+  {
+    id:"s26-plus",
+    brand:"samsung",
+    brandName:"삼성",
+    name:"갤럭시 S26+",
+    shortName:"S26+",
+    badge:"NEW",
+    imageClass:"samsung",
+    description:"기기변경 · 번호이동",
+    storage:["256GB","512GB"],
+    colors:["블랙","화이트","실버","블루"]
+  },
+
+  {
+    id:"s26",
+    brand:"samsung",
+    brandName:"삼성",
+    name:"갤럭시 S26",
+    shortName:"S26",
+    badge:"NEW",
+    imageClass:"samsung",
+    description:"기기변경 · 번호이동",
+    storage:["256GB","512GB"],
+    colors:["블랙","화이트","블루"]
+  },
+
+  {
+    id:"fold8",
+    brand:"samsung",
+    brandName:"삼성",
+    name:"갤럭시 Z Fold8",
+    shortName:"Z Fold8",
+    badge:"NEW",
+    imageClass:"fold8",
+    description:"사전예약 · 더블 스토리지",
+    storage:["256GB","512GB","1TB"],
+    colors:["블랙","실버","블루"]
+  },
+
+  {
+    id:"flip8",
+    brand:"samsung",
+    brandName:"삼성",
+    name:"갤럭시 Z Flip8",
+    shortName:"Z Flip8",
+    badge:"HOT",
+    imageClass:"flip8",
+    description:"사전예약 · 매장 특별혜택",
+    storage:["256GB","512GB"],
+    colors:["블랙","화이트","블루","핑크"]
+  },
+
+  {
+    id:"iphone-17-pro-max",
+    brand:"apple",
+    brandName:"아이폰",
+    name:"iPhone 17 Pro Max",
+    shortName:"iPhone 17 Pro Max",
+    badge:"APPLE",
+    imageClass:"iphone",
+    description:"기기변경 · 번호이동",
+    storage:["256GB","512GB","1TB"],
+    colors:["블랙","화이트","내추럴"]
+  },
+
+  {
+    id:"iphone-17-pro",
+    brand:"apple",
+    brandName:"아이폰",
+    name:"iPhone 17 Pro",
+    shortName:"iPhone 17 Pro",
+    badge:"APPLE",
+    imageClass:"iphone",
+    description:"기기변경 · 번호이동",
+    storage:["128GB","256GB","512GB"],
+    colors:["블랙","화이트","내추럴"]
+  },
+
+  {
+    id:"iphone-17",
+    brand:"apple",
+    brandName:"아이폰",
+    name:"iPhone 17",
+    shortName:"iPhone 17",
+    badge:"APPLE",
+    imageClass:"iphone",
+    description:"기기변경 · 번호이동",
+    storage:["128GB","256GB","512GB"],
+    colors:["블랙","화이트","블루","핑크"]
+  }
+
+];
+
+
+/* =====================================================
+   KT PLANS
+===================================================== */
+
+const PLANS = [
+
+  {
+    id:"plan1",
+    name:"5G 베이직",
+    price:80000
+  },
+
+  {
+    id:"plan2",
+    name:"5G 프리미엄",
+    price:90000
+  },
+
+  {
+    id:"plan3",
+    name:"5G 슈퍼플랜",
+    price:100000
+  }
+
+];
+
+
+/* =====================================================
+   CURRENT STATE
+===================================================== */
+
+let selectedBrand = "samsung";
+
+let selectedProduct =
+  PRODUCTS.find(
+    product => product.id === "s26-ultra"
+  );
+
+let selectedType = "기기변경";
+
+let selectedStorage =
+  selectedProduct.storage[0];
+
+let selectedColor =
+  selectedProduct.colors[0];
+
+let selectedPlan =
+  PLANS[0];
+
+
+/* =====================================================
+   OPEN / CLOSE
+===================================================== */
+
+function openPhoneShop(productId){
+
+  const found =
+    PRODUCTS.find(
+      product => product.id === productId
+    );
+
+  if(found){
+
+    selectedProduct = found;
+
+    selectedBrand = found.brand;
+
+    selectedType = "기기변경";
+
+    selectedStorage = found.storage[0];
+
+    selectedColor = found.colors[0];
+
+    selectedPlan = PLANS[0];
+
+  }
+
+  document
+    .getElementById("phoneModal")
+    .classList.add("show");
+
+  document.body.style.overflow="hidden";
+
+  renderPhoneShop();
+
+}
+
+
+function closePhoneShop(){
+
+  document
+    .getElementById("phoneModal")
+    .classList.remove("show");
+
+  document.body.style.overflow="";
+
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+function selectBrand(brand){
+
+  selectedBrand = brand;
+
+  const products =
+    PRODUCTS.filter(
+      product => product.brand === brand
+    );
+
+  selectedProduct = products[0];
+
+  selectedStorage =
+    selectedProduct.storage[0];
+
+  selectedColor =
+    selectedProduct.colors[0];
+
+  document
+    .getElementById("brandSamsung")
+    .classList.toggle(
+      "active",
+      brand === "samsung"
+    );
+
+  document
+    .getElementById("brandApple")
+    .classList.toggle(
+      "active",
+      brand === "apple"
+    );
+
+  renderPhoneShop();
+
+}
+
+
+/* =====================================================
+   MODEL
+===================================================== */
+
+function selectModel(id){
+
+  const product =
+    PRODUCTS.find(
+      product => product.id === id
+    );
+
+  if(!product) return;
+
+  selectedProduct = product;
+
+  selectedStorage =
+    product.storage[0];
+
+  selectedColor =
+    product.colors[0];
+
+  renderPhoneShop();
+
+}
+
+
+/* =====================================================
+   TYPE
+===================================================== */
+
+function selectType(type){
+
+  selectedType = type;
+
+  document
+    .querySelectorAll("#typeOptions .option-btn")
+    .forEach(button => {
+
+      button.classList.toggle(
+        "active",
+        button.dataset.type === type
+      );
+
+    });
+
+  updateCondition();
+
+}
+
+
+/* =====================================================
+   STORAGE
+===================================================== */
+
+function selectStorage(storage){
+
+  selectedStorage = storage;
+
+  renderStorageOptions();
+
+  updateCondition();
+
+}
+
+
+/* =====================================================
+   COLOR
+===================================================== */
+
+function selectColor(color){
+
+  selectedColor = color;
+
+  renderColorOptions();
+
+  updateCondition();
+
+}
+
+
+/* =====================================================
+   PLAN
+===================================================== */
+
+function selectPlan(id){
+
+  const plan =
+    PLANS.find(
+      item => item.id === id
+    );
+
+  if(!plan) return;
+
+  selectedPlan = plan;
+
+  renderPlanOptions();
+
+  updatePrice();
+
+  updateCondition();
+
+}
+
+
+/* =====================================================
+   RENDER PHONE SHOP
+===================================================== */
+
+function renderPhoneShop(){
+
+  renderModelOptions();
+
+  renderStorageOptions();
+
+  renderColorOptions();
+
+  renderPlanOptions();
+
+  updatePhoneVisual();
+
+  updateTypeOptions();
+
+  updatePrice();
+
+  updateCondition();
+
+}
+
+
+/* =====================================================
+   MODEL OPTIONS
+===================================================== */
+
+function renderModelOptions(){
+
+  const grid =
+    document.getElementById("modelGrid");
+
+  const products =
+    PRODUCTS.filter(
+      product =>
+        product.brand === selectedBrand
+    );
+
+  grid.innerHTML =
+    products.map(product => `
+
+      <button
+        class="model-btn ${product.id === selectedProduct.id ? "active" : ""}"
+        onclick="selectModel('${product.id}')">
+
+        <small>
+          ${product.badge}
+        </small>
+
+        <strong>
+          ${product.name}
+        </strong>
+
+        <span>
+          ${product.description}
+        </span>
+
+      </button>
+
+    `).join("");
+
+}
+
+
+/* =====================================================
+   STORAGE OPTIONS
+===================================================== */
+
+function renderStorageOptions(){
+
+  const box =
+    document.getElementById("storageOptions");
+
+  box.innerHTML =
+    selectedProduct.storage.map(storage => `
+
+      <button
+        class="option-btn ${storage === selectedStorage ? "active" : ""}"
+        onclick="selectStorage('${storage}')">
+
+        ${storage}
+
+      </button>
+
+    `).join("");
+
+}
+
+
+/* =====================================================
+   COLOR OPTIONS
+===================================================== */
+
+function renderColorOptions(){
+
+  const box =
+    document.getElementById("colorOptions");
+
+  box.innerHTML =
+    selectedProduct.colors.map(color => `
+
+      <button
+        class="option-btn ${color === selectedColor ? "active" : ""}"
+        onclick="selectColor('${color}')">
+
+        ${color}
+
+      </button>
+
+    `).join("");
+
+}
+
+
+/* =====================================================
+   PLAN OPTIONS
+===================================================== */
+
+function renderPlanOptions(){
+
+  const box =
+    document.getElementById("planOptions");
+
+  box.innerHTML =
+    PLANS.map(plan => `
+
+      <button
+        class="option-btn ${plan.id === selectedPlan.id ? "active" : ""}"
+        onclick="selectPlan('${plan.id}')">
+
+        ${plan.name}
+
+      </button>
+
+    `).join("");
+
+}
+
+
+/* =====================================================
+   TYPE OPTIONS
+===================================================== */
+
+function updateTypeOptions(){
+
+  document
+    .querySelectorAll("#typeOptions .option-btn")
+    .forEach(button => {
+
+      button.classList.toggle(
+        "active",
+        button.dataset.type === selectedType
+      );
+
+    });
+
+}
+
+
+/* =====================================================
+   PHONE VISUAL
+===================================================== */
+
+function updatePhoneVisual(){
+
+  const phone =
+    document.getElementById("modalPhone");
+
+  phone.className =
+    "modal-phone " +
+    selectedProduct.imageClass;
+
+  phone.innerHTML = `
+
+    <span>
+      ${selectedProduct.brandName}
+    </span>
+
+    <strong>
+      ${selectedProduct.shortName}
+    </strong>
+
+  `;
+
+}
+
+
+/* =====================================================
+   PRICE
+===================================================== */
+
+function updatePrice(){
+
+  /*
+    현재 실제 판매가격 / 지원금이 확정되지 않았기 때문에
+    임의의 휴대폰 가격을 표시하지 않습니다.
+
+    실제 조건을 넣게 되면 이 부분을 통해
+    기기값 + 요금제 + 지원금을 자동 계산할 수 있습니다.
+  */
+
+  document
+    .getElementById("monthlyPrice")
+    .textContent =
+      "상담 후 안내";
+
+}
+
+
+/* =====================================================
+   CONDITION
+===================================================== */
+
+function updateCondition(){
+
+  document
+    .getElementById("selectedCondition")
+    .innerHTML = `
+
+      <strong>
+        선택 조건
+      </strong>
+
+      <br>
+
+      모델 :
+      ${selectedProduct.name}
+
+      <br>
+
+      가입 :
+      ${selectedType}
+
+      <br>
+
+      용량 :
+      ${selectedStorage}
+
+      <br>
+
+      색상 :
+      ${selectedColor}
+
+      <br>
+
+      요금제 :
+      ${selectedPlan.name}
+
+  `;
+
+}
+
+
+/* =====================================================
+   PHONE CONSULT
+===================================================== */
+
+function submitPhoneConsult(){
+
+  const message =
+
+`[휴대폰 상담 신청]
+
+모델 : ${selectedProduct.name}
+가입유형 : ${selectedType}
+용량 : ${selectedStorage}
+색상 : ${selectedColor}
+요금제 : ${selectedPlan.name}
+
+해당 조건으로 상담받고 싶습니다.`;
+
+
+  document
+    .getElementById("product")
+    .value =
+      selectedProduct.name;
+
+
+  document
+    .getElementById("msg")
+    .value =
+      message;
+
+
+  closePhoneShop();
+
+
+  setTimeout(() => {
+
+    document
+      .getElementById("estimate")
+      .scrollIntoView({
+        behavior:"smooth"
+      });
+
+  },100);
+
+}
+
+
+/* =====================================================
+   INTERNET CONSULT
+===================================================== */
+
+function pickInternet(value){
+
+  const product =
+    document.getElementById("product");
+
+  product.value = value;
+
+  document
+    .getElementById("msg")
+    .value =
+      `[인터넷 상담 신청]\n\n관심 상품 : ${value}\n\n인터넷 / TV 결합 조건을 상담받고 싶습니다.`;
+
+
+  document
+    .getElementById("estimate")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   OLD PICK SUPPORT
+===================================================== */
+
+function pick(value){
+
+  const product =
+    document.getElementById("product");
+
+  product.value = value;
+
+  document
+    .getElementById("estimate")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+document
+  .getElementById("form")
+  .addEventListener(
+    "submit",
+    function(e){
+
+      e.preventDefault();
+
+
+      const name =
+        document
+          .getElementById("name")
+          .value.trim();
+
+      const phone =
+        document
+          .getElementById("phone")
+          .value.trim();
+
+      const product =
+        document
+          .getElementById("product")
+          .value;
+
+      const message =
+        document
+          .getElementById("msg")
+          .value.trim();
+
+
+      if(!name || !phone){
+
+        alert(
+          "이름과 연락처를 입력해주세요."
+        );
+
+        return;
+
+      }
+
+
+      alert(
+
+`상담 신청 내용이 준비되었습니다.
+
+이름 : ${name}
+연락처 : ${phone}
+관심상품 : ${product}
+
+현재 사이트는 상담 접수 화면까지 구현된 상태입니다.
+실제 운영에서는 이 정보를 문자/카카오톡/DB로 연결할 수 있습니다.`
+
+      );
+
+    }
+  );
+
+
+/* =====================================================
+   MODAL OUTSIDE CLICK
+===================================================== */
+
+document
+  .getElementById("phoneModal")
+  .addEventListener(
+    "click",
+    function(e){
+
+      if(e.target === this){
+
+        closePhoneShop();
+
+      }
+
+    }
+  );
+
+
+/* =====================================================
+   ESC CLOSE
+===================================================== */
+
+document
+  .addEventListener(
+    "keydown",
+    function(e){
+
+      if(e.key === "Escape"){
+
+        closePhoneShop();
+
+      }
+
+    }
+  );
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+renderPhoneShop();
+
 </script>
+
 </body>
 </html>
