@@ -29,6 +29,11 @@ footer{background:#111;color:#999;padding:44px 0 24px}.footer-row{display:flex;j
 @media(max-width:980px){.hero-grid,.consult-box{grid-template-columns:1fr}.service-grid{grid-template-columns:repeat(3,1fr)}.product-grid{grid-template-columns:repeat(2,1fr)}.benefit-grid{grid-template-columns:1fr 1fr}.benefit.big{grid-column:1/-1}.inet-grid{grid-template-columns:1fr 1fr}.event-list{grid-template-columns:1fr 1fr}.event:first-child{grid-column:1/-1}.navlinks{display:none}.hamb{display:block;margin-left:auto}.nav-phone{display:none}}
 @media(max-width:600px){.wrap{width:calc(100% - 28px)}.notice{font-size:9px;height:36px}.header{height:70px}.brand b{font-size:15px}.hero{padding:28px 0}.hero-copy{padding:34px 25px;min-height:430px}.hero h1{font-size:42px;letter-spacing:-3px}.hero p{font-size:14px}.hero-actions{flex-direction:column}.hero-feature{min-height:420px;padding:27px}.hero-feature h2{font-size:30px}.hero-products{right:8px;top:78px}.hero-phone-img{width:115px;height:245px}.section{padding:65px 0}.section h2{font-size:31px}.section-head{display:block}.text-link{display:inline-block;margin-top:12px}.service-grid{grid-template-columns:1fr 1fr}.service-card{padding:17px}.product-grid{grid-template-columns:1fr 1fr;gap:9px}.product-imgbox{height:210px}.product h3{font-size:14px}.estimate-banner{grid-template-columns:1fr;padding:25px}.estimate-banner h3{font-size:28px}.estimate-steps{grid-template-columns:1fr 1fr 1fr}.step{padding:12px}.step b{font-size:11px}.benefit-grid,.inet-grid,.event-list{grid-template-columns:1fr}.benefit.big,.event:first-child{grid-column:auto}.consult h2{font-size:32px}.form-row{grid-template-columns:1fr}.store-grid{grid-template-columns:1fr 1fr}.store-item{padding:16px}.footer-row{display:block}.footer-row>div+div{margin-top:18px}.modal-body{grid-template-columns:1fr;padding:20px}.modal-photo{height:300px}.modal-head{padding:24px 20px 17px}.modal-head h2{font-size:25px}}
 </style>
+
+<style>
+.product-imgbox{background:#f7f7f8}.product-img{width:100%;height:100%;object-fit:contain;padding:12px}.modal-photo img{width:100%;height:100%;object-fit:contain;padding:18px}.hero-phone-img{width:180px;height:290px;object-fit:contain}.hero-products{gap:2px}.hero-products img:first-child{transform:translateY(16px)}
+@media(max-width:600px){.hero-phone-img{width:135px;height:220px}.hero-products{right:0;top:90px}}
+</style>
 </head>
 <body>
 <div class="notice"><span>●</span> KT딜마켓 온라인 특별혜택 · 휴대폰 / 인터넷·TV 맞춤상담 <a href="#consult">상담 신청하기 →</a></div>
@@ -41,7 +46,7 @@ footer{background:#111;color:#999;padding:44px 0 24px}.footer-row{display:flex;j
 <main id="top">
 <section class="hero"><div class="wrap hero-grid">
 <div class="hero-copy"><div class="eyebrow">KT DEAL MARKET · J1 COMPANY</div><h1>휴대폰은 더 쉽고<br><em>혜택은 더 크게.</em></h1><p>원하는 휴대폰과 인터넷·TV를 한눈에 비교하고<br>내 조건으로 바로 상담받아보세요.</p><div class="hero-actions"><a class="btn-red" href="#phones">휴대폰 둘러보기 →</a><a class="btn-white" href="#consult">맞춤 견적 받기</a></div><div class="hero-proof"><span>✓ 동탄역 1층 KT 매장</span><span>✓ 1:1 맞춤 상담</span><span>✓ 사전예약 / 결합상담</span></div></div>
-<div class="hero-feature"><div class="hero-feature-top">TODAY'S DEAL</div><h2>GALAXY<br>신제품 상담</h2><p>모델을 선택하고 기기변경 / 번호이동 조건과 요금제를 확인해보세요.</p><div class="hero-products"><img class="hero-phone-img" src="https://assets.products-live.ao.com/Images/5a6ef0fc-3281-41bd-9e7c-d73bf7e3754c/1280x1280/1_B8_Front-%20-Back-with-Logo_Graphite_2000x2000.jpg" alt="Galaxy Z Flip8"><img class="hero-phone-img" src="https://m.media-amazon.com/images/I/519sEGAqbWL._AC_SL1500_.jpg" alt="Galaxy Z Fold8"></div><a href="#phones">인기 휴대폰 보기 →</a></div>
+<div class="hero-feature"><div class="hero-feature-top">TODAY'S DEAL</div><h2>GALAXY<br>신제품 상담</h2><p>모델을 선택하고 기기변경 / 번호이동 조건과 요금제를 확인해보세요.</p><div class="hero-products"><img class="hero-phone-img" src="https://images.samsung.com/hk_en/smartphones/galaxy-z-flip8/buy/B8_Global_KV_Video_PC_944x510.jpg" alt="Galaxy Z Flip8"><img class="hero-phone-img" src="https://images.samsung.com/hk_en/smartphones/galaxy-z-fold8/buy/H8_Global_KV_Video_PC_944x510.jpg" alt="Galaxy Z Fold8"></div><a href="#phones">인기 휴대폰 보기 →</a></div>
 </div></section>
 
 <section class="section"><div class="wrap"><div class="section-head"><div><div class="section-kicker">ONE STOP</div><h2>원하는 서비스를 바로 찾아보세요</h2><div class="section-sub">휴대폰부터 인터넷·TV까지 한 곳에서 상담</div></div></div><div class="service-grid">
@@ -84,13 +89,14 @@ footer{background:#111;color:#999;padding:44px 0 24px}.footer-row{display:flex;j
 
 <script>
 const IMG={
-  s26:"https://i5.walmartimages.cl/asr/99a2641b-fbc2-4182-9ab9-2d056354075f.6afe35fa9d6685b3d8f370266224bab3.jpeg?odnBg=ffffff&odnHeight=2000&odnWidth=2000",
-  fold8:"https://m.media-amazon.com/images/I/519sEGAqbWL._AC_SL1500_.jpg",
-  flip8:"https://assets.products-live.ao.com/Images/5a6ef0fc-3281-41bd-9e7c-d73bf7e3754c/1280x1280/1_B8_Front-%20-Back-with-Logo_Graphite_2000x2000.jpg",
-  iphone17:"https://naranjan.sg/cdn/shop/files/iP_17_white_173d0064-f0d2-46b7-9a33-4cbaebecac3c.jpg?v=1771532625&width=3840"
+  s26:'https://images.samsung.com/hk_en/smartphones/galaxy-s26/buy/[M1,M2]_Scale_Comparison_Image_inch,cm_gro_PC_944x510.jpg',
+  s26ultra:'https://images.samsung.com/hk_en/smartphones/galaxy-s26-ultra/buy/M3_S.comonlySingleKV_PC_944x510.jpg',
+  fold8:'https://images.samsung.com/hk_en/smartphones/galaxy-z-fold8/buy/H8_Global_KV_Video_PC_944x510.jpg',
+  flip8:'https://images.samsung.com/hk_en/smartphones/galaxy-z-flip8/buy/B8_Global_KV_Video_PC_944x510.jpg',
+  iphone17:'https://www.apple.com/newsroom/images/2025/09/apple-debuts-iphone-17/tile/Apple-iPhone-17-hero-250909-lp.jpg.news_app_ed.jpg'
 };
 const products=[
-{id:'s26ultra',brand:'samsung',tag:'BEST',name:'갤럭시 S26 Ultra',desc:'기기변경 · 번호이동 · 플래그십',img:IMG.s26,storage:['256GB','512GB','1TB']},
+{id:'s26ultra',brand:'samsung',tag:'BEST',name:'갤럭시 S26 Ultra',desc:'기기변경 · 번호이동 · 플래그십',img:IMG.s26ultra,storage:['256GB','512GB','1TB']},
 {id:'fold8',brand:'samsung',tag:'NEW',name:'갤럭시 Z Fold8',desc:'사전예약 · 더블 스토리지',img:IMG.fold8,storage:['256GB','512GB','1TB']},
 {id:'flip8',brand:'samsung',tag:'HOT',name:'갤럭시 Z Flip8',desc:'사전예약 · 매장 특별혜택',img:IMG.flip8,storage:['256GB','512GB']},
 {id:'iphone17',brand:'apple',tag:'APPLE',name:'iPhone 17',desc:'기기변경 · 번호이동',img:IMG.iphone17,storage:['256GB','512GB']},
